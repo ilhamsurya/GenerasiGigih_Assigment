@@ -5,12 +5,16 @@ khotun = Person.new("Khotun Khan", 500, 50)
 
 loop do
     jin.attack(khotun)
-    puts khotun.profile()
-    puts "/n"
-    break if khotun.isDead?
+        puts khotun.profile()
+        puts "\n"
+    break if khotun.isDead
 
-    khotun.attack(jin)
-    puts jin.profile()
-    puts "/n"
-    break if jin.isDead?
+    if jin.deflect == true
+        jin.deflect()
+    else
+        khotun.attack(jin)
+        puts jin.profile()
+        puts "\n"
+        break if jin.isDead
+    end
 end

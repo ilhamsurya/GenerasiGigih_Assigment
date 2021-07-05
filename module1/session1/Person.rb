@@ -4,6 +4,7 @@ class Person
     #attr_reader :  creates only the reader.
     #attr_writer: creates only the writer.
 
+    attr_accessor :name
 
     def initialize(name, hitpoint, attack_damage)
         @name = name
@@ -25,9 +26,20 @@ class Person
     end
 
     def isDead()
-        if hitpoint <= 0
+        if @hitpoint <= 0
             puts "#{@name} dies"
             true
+        end
+    end
+
+    def deflect()
+        @deflect_percentage = rand(100)
+
+        if @deflect_percentage <= 80
+            puts "#{@name} deflect the attacks"
+            true
+        else
+            false
         end
     end
 
