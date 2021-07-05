@@ -1,0 +1,14 @@
+Password Akun SQL Admin:
+1) username: Admin
+2) password: password
+
+Running My SQL
+1) sudo /etc/init.d/mysql start
+2) sudo mysql
+
+Login as username
+1) mysql -u admin -p  
+2) pass = password
+
+Check Status SQL
+sudo /etc/init.d/mysql status 
