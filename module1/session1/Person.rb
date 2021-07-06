@@ -21,6 +21,8 @@ class Person
         puts "#{@name} attacks #{enemy.name} with #{@attack_damage} damage"
     end
 
+    # implementation of encapsulation
+    # encapsulation is hide the internal represantion or state of an object
     def reduce_hitpoint(damage)
         @hitpoint -= damage
     end
