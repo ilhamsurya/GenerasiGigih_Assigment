@@ -7,11 +7,22 @@ class Person
     attr_accessor :name
 
     def initialize(name, hitpoint, attack_damage)
+        # the name,hitpoint and attack damage are called instances variables or state
         @name = name
         @hitpoint = hitpoint
         @attack_damage = attack_damage
     end
 
+     # the profile, attack, reduce_hitpoint, isDead and deflect are called instance methods or behaviour
+
+    # implementation of encapsulation attribute writer method
+    def change_profile(new_name = @name, new_hitpoint = @hitpoint, new_attack_damage = @attack_damage)
+        @name = new_name
+        @hitpoint = new_hitpoint
+        @attack_damage = new_attack_damage
+    end
+
+    # implementation of encapsulation attribute reader method
     def profile()
         puts "#{@name} has #{@hitpoint} and #{@attack_damage} attack damage"
     end

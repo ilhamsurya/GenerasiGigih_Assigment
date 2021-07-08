@@ -5,6 +5,9 @@ require_relative "person"
 
 jin = Person.new("Jin Sakai", 100, 50)
 khotun = Person.new("Khotun Khan", 500, 50)
+
+# jin.change_profile("Steven")
+
 jin.profile()
 puts "\n"
 khotun.profile()
