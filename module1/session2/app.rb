@@ -60,7 +60,6 @@ until (jin.isDead? || mongols_army.empty?) do
         puts "command not valid"
     end
 
-
     mongols_army.each do |mongol_soldier|
         mongol_soldier.attack(samurai_team[rand(samurai_team.size)])
     end
