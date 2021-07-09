@@ -2,20 +2,20 @@ require_relative("samurai")
 
 class Player < Samurai
 
-    def initialize(name,hitpoint,attack_damage)
+    def initialize(name,hitpoint,attack_damage, heal_point = 100, deflect_percentage = 80)
         super(name,hitpoint,attack_damage)
-        @deflect_percentage = 80
-        @heal_point = 100
+        @deflect_percentage = deflect_percentage
+        @heal_point = heal_point
     end
 
-    def reduce_hitpoint(damage)
+    def take_damage(damage)
         if rand(1..100) < @deflect_percentage
             puts "#{@name} deflect the attacks"
         else
             super(damage)
         end
     end 
-    
+    # Choose what to do for player
     def player_move()
         puts "As #{@name}, what do you want to do this turn?"
         puts "1) Attack an enemy"
@@ -29,29 +29,27 @@ class Player < Samurai
             puts "command not found"
         end
     end
-
-    def choose_target()
-        puts "Which enemy you want to attack?"
-        puts "1) Mongol Archer"
-        puts "2) Mongol Spearman"
-        puts "3) Mongol Swordsman"
-        target = gets.chomp.to_i
+    # Choose attacking target
+    def choose_target(jin_enemy)
+        puts "Which enemy you want to attack?"        
+        jin_enemy.each_with_index  do |enemy, index|
+            puts "#{index + 1}) #{enemy.name}"
+        end
+        target = gets.chomp.to_i - 1
         return target
     end
-
+    # Choose heal target
     def heal_target(jin_allies)
         puts "Which ally you want to heal?"
-        i = 1
-        
-        jin_allies.each do |ally|
-        puts "#{i}) #{ally.name}"
-        i += 1
+    
+        jin_allies.each_with_index do |ally, index|
+            puts "#{index + 1}) #{ally.name}"
         end
-        heal_target = gets.chomp.to_i
-        heal_target -= 1
+
+        heal_target = gets.chomp.to_i - 1
         return heal_target
     end
-
+    # Healing Allies
     def heal(jin_allies,heal_target)
         ally = jin_allies[heal_target]
         puts "#{@name} heals #{ally.name} restoring #{@heal_point} hitpoints"

@@ -1,15 +1,16 @@
 require_relative("person")
 
 class Mongol < Person
-    def intialize(name, hitpoint, attack_damage)
-        super(name,hitpoint,attack_damage)
+    def initialize(name, hit_points, attack_damage)
+        super(name, hit_points, attack_damage)
+        @flee_percentage = 0.5
         @fled = false
     end
 
-    def reduce_hitpoint(damage)
+    def take_damage(damage)
         super(damage)
-        if @hitpoint <= 50 && rand(100) <= 50
-            flee 
+        if @hitpoint > 0 && @hitpoint < 50 
+            flee if rand < @flee_percentage 
         end
     end
 
@@ -17,14 +18,14 @@ class Mongol < Person
         super(enemy)
         @mongolian.attack
     end
-
+    
     def flee
-        @flee = true
+        @fled = true
         puts "#{@name} has fled the battlefield with #{@hitpoint} hitpoint left"
     end
 
-    def flee?
-        @fled
+    def flee?()
+        @fled  
     end
 end
 

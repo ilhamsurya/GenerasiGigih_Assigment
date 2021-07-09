@@ -6,5 +6,4 @@ class Samurai < Person
         super(name,hitpoint,attack_damage)
     end
 
-
 end

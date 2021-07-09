@@ -13,15 +13,6 @@ class Person
         @attack_damage = attack_damage
     end
 
-     # the profile, attack, reduce_hitpoint, isDead and deflect are called instance methods or behaviour
-
-    # implementation of encapsulation attribute writer method
-    def change_profile(new_name = @name, new_hitpoint = @hitpoint, new_attack_damage = @attack_damage)
-        @name = new_name
-        @hitpoint = new_hitpoint
-        @attack_damage = new_attack_damage
-    end
-
     # implementation of encapsulation attribute reader method
     def to_s()
         puts "#{@name} has #{@hitpoint} hitpoints and #{@attack_damage} attack damage"
@@ -29,21 +20,19 @@ class Person
 
     def attack(enemy)
         puts "#{@name} attacks #{enemy.name} with #{@attack_damage} damage"
-        enemy.reduce_hitpoint(@attack_damage)
+        enemy.take_damage(@attack_damage)
     end
 
     # implementation of encapsulation
     # encapsulation is hide the internal represantion or state of an object
-    def reduce_hitpoint(damage)
+    def take_damage(damage)
         @hitpoint -= damage
     end
 
-    def isDead?
+    def die?
         if @hitpoint <= 0
-            puts "#{@name} dies"
-            true
-        else
-            false
+        puts "#{@name} dies"
+        true
         end
     end
 
