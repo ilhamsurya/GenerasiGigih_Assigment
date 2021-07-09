@@ -62,7 +62,7 @@ until (jin.die? || mongols_army.empty?) do
         samurai_team.each do |samurai|
             if samurai.die?
                 samurai_team.delete(samurai)
-                jin_allies.delete(ally)
+                jin_allies.delete(samurai)
             end
         end
     end
