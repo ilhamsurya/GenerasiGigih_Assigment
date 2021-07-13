@@ -9,7 +9,7 @@ class Mongol < Person
 
     def take_damage(damage)
         super(damage)
-        if @hitpoint > 0 && @hitpoint < 50 
+        if @hitpoint < 50 && !die?
             flee if rand < @flee_percentage 
         end
     end

@@ -12,6 +12,9 @@ sensei = Samurai.new("Sensei Ishikawa", 80, 60)
 mongol_archer = MongolArcher.new("Mongol Archer", 80, 40)
 mongol_spearman = MongolSpearman.new("Mongol Spearman ", 120, 60)
 mongol_swordsman = MongolSwordsman.new("Mongol Swordsman", 100, 50)
+# mongol_archer = Mongol.new("Mongol Archer", 80, 40, MongolArcher)
+# mongol_spearman = Mongol.new("Mongol Spearman ", 120, 60, MongolSpearman)
+# mongol_swordsman = Mongol.new("Mongol Swordsman", 100, 50, MongolSwordsman)
 
 jin_allies = [yuna,sensei]
 samurai_team = [jin] + jin_allies

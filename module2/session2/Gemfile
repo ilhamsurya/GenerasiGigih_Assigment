@@ -1,0 +1,4 @@
+source 'http://rubygems.org'
+# main gems
+gem 'mysql2'
+gem 'sinatra'
