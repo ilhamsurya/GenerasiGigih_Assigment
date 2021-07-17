@@ -1,0 +1,11 @@
+Our food order management system database can now handle items data. 
+But the client also needs to record customer orders. They want the customer name and phone (unique)
+to be recorded along with their purchases. So when they make an order, we can see who make the order, 
+how much is the total price paid for one order, and the order date. 
+They also want the order details recorded, which items are bought in one order and how many 
+(quantity of each item bought).
+
+1) Define the additional entities and design the entity relationship diagram
+2) Create tables that represent the entities
+3) Insert minimal 5 dummy records for each entity
+4) Display data which contains all orders information, with their respective customer name and phone information
