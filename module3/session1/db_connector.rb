@@ -24,10 +24,11 @@ require './item'
     items
   end
 
-  def create_new_item(name,price)
+  def create_new_item(name,price, category)
     client = create_db_client
-    new_item = client.query("insert into items(name,price) values('#{name}', '#{price}')")
-    new_item
+    new_item = client.query("INSERT INTO items(name,price) VALUES('#{name}', '#{price}')")
+    new_category = client.query("INSERT INTO item_categories(item_id, category_id) VALUES (LAST_INSERT_ID(), '#{category}') ")
+    
   end
 
   def search_item_id(id)
