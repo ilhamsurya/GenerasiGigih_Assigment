@@ -1,0 +1,25 @@
+<body>
+<table>
+    <tbody>
+    <h1>Daftar Item<h1>
+    <% items.each do |item|%>
+        <tr>
+            <td><%= item.name %> </td>
+            <td>Rp.<%= item.price %></td>
+            <td>
+            <a href="/items/<%= item.id %>" class="btn btn-sm btn-primary">Show</a>
+            </td>
+            <td>
+            <a href="/items/<%= item.id %>/edit" class="btn btn-sm btn-primary">Edit</a>
+            </td>
+            <td>
+            <form action="/items/<%= item.id %>" method="post">
+                <input type="submit" name="_method" value="delete" class="btn btn-xs btn-danger">
+            </form>
+            </td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+<a href="/items/new">New Item</a>
+</body>
