@@ -12,3 +12,10 @@ Login as username
 
 Check Status SQL
 sudo /etc/init.d/mysql status 
+
+Setup Gemfile
+    1. Buat File Gemfile
+    2. bundle install
+
+Run rack project
+    1. rackup -p [PORT]

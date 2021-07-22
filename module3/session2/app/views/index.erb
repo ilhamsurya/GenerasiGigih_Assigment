@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+    <div class="menu-box">
+        <h1 class="header">Restaurants</h1>
+            <a href="/items/new">New Item</a>
+        <div class="box-row">
+        <% items.each do |item|%>
+            <div class="box-column">
+                <div class="menu-card">
+                <img
+                    src="https://hips.hearstapps.com/clv.h-cdn.co/assets/16/52/1482871315-clx010117winnerdinners-04.jpg"
+                />
+                <p><%= item.name %>, Rp.<%= item.price %> </p>
+    
+                </div>
+                <button type="button" class="cart-btm"> <a href="/items/<%= item.id %>">Show</a></button>
+                <button type="button" class="cart-edit">  <a href="/items/<%= item.id %>/edit" >Edit</a></button>
+              
+                <form action="/items/<%= item.id %>" method="post">
+                    <input type="submit" name="_method" value="delete" class="cart-delete">
+                </form>
+            </div>
+        <% end %>
+        <div class="box-column"></div>
+        </div>
+    </div>
+
+    </body>
+</html>
+
