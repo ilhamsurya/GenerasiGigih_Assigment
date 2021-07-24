@@ -1,4 +1,4 @@
-require_relative '../db/db_connector'
+require_relative '../../db/db_connector'
 require_relative './category.rb'
 
 class Item
@@ -12,13 +12,13 @@ class Item
     end
 
     ## CREATE New Item
-    def create_new_item(name,price, category)
+    def create(name,price, category)
         client = create_db_client
         new_item = client.query("INSERT INTO items(name,price) VALUES('#{name}', '#{price}')")
         new_category = client.query("INSERT INTO item_categories(item_id, category_id) VALUES (LAST_INSERT_ID(), '#{category}') ")
     end
     ## GET All Item
-    def self.get_all_items
+    def self.get_all
         client = create_db_client
         rawData = client.query("select * from items")
         items = Array.new
@@ -29,7 +29,7 @@ class Item
         items
     end
     ## GET One Item
-    def self.search_item_id(id)
+    def self.get_one(id)
         client= create_db_client
         rawData = client.query("SELECT items.*, categories.name as category_name, categories.id as category_id
         FROM items 
@@ -44,12 +44,12 @@ class Item
         single_item
     end
     ## GET cheaper item
-    def self.get_cheaper_items(price)
+    def self.cheaper(price)
         client = create_db_client
         rawData = client.query("select * from items where price < #{price}")
     end
     ## UPDATE Item
-    def self.update_item(id, name, price, category)
+    def self.update(id, name, price, category)
         client= create_db_client
         updateData = client.query("
         UPDATE items 
@@ -59,7 +59,7 @@ class Item
         updateData
     end 
     ## DELETE Item
-    def self.delete_item(id)
+    def self.delete(id)
         client= create_db_client
         updateData = client.query("
         DELETE FROM items WHERE id = #{id}")

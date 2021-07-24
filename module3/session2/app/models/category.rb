@@ -7,6 +7,11 @@ class Category
         @name = name
         @id = id
     end
+    ## CREATE New Item
+    def create_new_category(id,name)
+        client = create_db_client
+        new_item = client.query("INSERT INTO categories(id,name) VALUES('#{id}','#{name}')")
+    end
 
     def self.get_category_by_id(id)
         client = create_db_client

@@ -1,0 +1,20 @@
+<h1>Edit Items</h1>
+<% items.each do |item|%>
+<form action="/items/<%= item.id %>" method="POST">
+  <div class="form-group">
+    <label for="name">Item Name</label>
+    <input type="text" name="name" class="form-control" id="name" placeholder="Item Name" value="<%= item.name %>">
+    <label for="price">Price</label>
+    <input type="number" name="price" class="form-control" id="price" placeholder="Item Price" value="<%= item.price %>">
+    <% end %>
+    <label for="category">Choose Category:</label>
+    <select id="category" name="category" class="form-control">
+        <% categories.each do |category|%>
+            <option value=<%= category.id %>> <%= category.name %></option>
+        <% end %>
+    </select>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary btn-sm">Edit Post</button>
+  <a href="/posts" class="btn btn-danger btn-sm">Back</a>
+</form>
