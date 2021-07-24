@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Main start  */
+
+main {
+  display: flex;
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+
+.cart-btn {
+  display: none;
+  position: fixed;
+  top: 1vh;
+  right: 1vw;
+  width: 40px;
+  height: 40px;
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAOltESk2kisSh56FwjCYJz1BAd8MIgxM9Cw&usqp=CAU");
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.cart-btm {
+  width: 60px;
+  height: 30px;
+  margin: 0px 0 5px 0px;
+  display: block;
+  border-radius: 25px;
+  font-size: 16px;
+  color: #fff;
+  background: rgb(0, 170, 19);
+  border: 1px solid rgb(233, 54, 41);
+}
+.cart-edit {
+  width: 60px;
+  height: 30px;
+  margin: 0px 0 5px 0px;
+  display: block;
+  border-radius: 25px;
+  font-size: 16px;
+  color: #fff;
+  background: rgb(235, 231, 19);
+  border: 1px solid rgb(233, 54, 41);
+}
+.cart-delete {
+  width: 60px;
+  height: 30px;
+  margin: 0px 0 5px 0px;
+  display: block;
+  border-radius: 25px;
+  font-size: 16px;
+  color: #fff;
+  background: rgb(235, 19, 19);
+  border: 1px solid rgb(233, 54, 41);
+}
+
+/* Main text start */
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-line {
+  display: block;
+  position: absolute;
+  top: 19vh;
+  left: 5vw;
+  font-size: 50px;
+  font-family: "Abril Fatface", cursive;
+}
+
+.secoundry-line {
+  display: block;
+  position: absolute;
+  top: 22vh;
+  right: 20vw;
+  font-size: 20px;
+  font-weight: 100;
+  color: rgb(138, 137, 137);
+  font-family: monospace;
+}
+
+.red-line {
+  position: sticky;
+  width: 65px;
+  height: 2px;
+  margin-top: 10px;
+  background-color: rgb(233, 54, 41);
+}
+
+/* Menu Box Card start */
+
+.menu-box {
+  display: block;
+  position: relative;
+  top: 5vh;
+  left: 5vw;
+  height: 100%;
+  width: 80%;
+}
+
+.box-row {
+  position: relative;
+  margin-top: 5%;
+  display: inline-block;
+  /* justify-content: space-between; */
+}
+
+.box-column {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+}
+
+.menu-card {
+  position: relative;
+  display: inline-block;
+  background: rgb(255, 255, 255);
+  height: 250px;
+  width: 200px;
+  border-radius: 25px;
+  margin-right: 20px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+}
+
+.menu-card img {
+  position: absolute;
+  top: 20px;
+  left: 23px;
+  display: block;
+  width: 160px;
+  height: 160px;
+  border-radius: 100%;
+}
+
+.menu-card p {
+  position: absolute;
+  bottom: 30px;
+  left: 38px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+/* Responsive Style  */
+
+@media screen and (max-width: 1200px) {
+  .secoundry-line {
+    top: 20vh;
+    right: 0vw;
+    margin-bottom: 10vh;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .side-nav {
+    display: none;
+  }
+
+  .side-nav.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 50%;
+    background: black;
+    z-index: 5;
+  }
+  .cart-btn {
+    display: block;
+    z-index: 7;
+  }
+
+  .toggle {
+    display: block;
+    z-index: 7;
+  }
+
+  .toggle.active {
+    display: block;
+    z-index: 7;
+  }
+
+  .main-line {
+    font-size: 30px;
+    height: 25vh;
+    width: 70vh;
+    left: 10vw;
+  }
+
+  .secoundry-line {
+    top: 240vh;
+    right: 30vw;
+    margin-bottom: 10vh;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .side-nav {
+    display: none;
+  }
+
+  .side-nav.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 80%;
+    background: black;
+    z-index: 5;
+  }
+
+  .secoundry-line {
+    top: 340vh;
+    right: 30vw;
+    margin-bottom: 20px;
+  }
+
+  .main-line {
+    font-size: 30px;
+    height: 30vh;
+    width: 50vh;
+    left: 10vw;
+  }
+
+  .cart-btn {
+    display: block;
+    z-index: 7;
+  }
+
+  .toggle {
+    display: block;
+    z-index: 7;
+  }
+
+  .toggle.active {
+    display: block;
+    z-index: 7;
+  }
+}

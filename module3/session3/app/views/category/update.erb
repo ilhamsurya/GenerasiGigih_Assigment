@@ -1,0 +1,12 @@
+<h1>Edit Category</h1>
+<% categories.each do |category|%>
+<form action="/category/<%= category.id %>" method="POST">
+  <div class="form-group">
+    <label for="name">Category Name</label>
+    <input type="text" name="name" class="form-control" id="name" placeholder="category Name" value="<%= category.name %>">
+    <% end %>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary btn-sm">Edit Category</button>
+  <a href="/" class="btn btn-danger btn-sm">Back</a>
+</form>

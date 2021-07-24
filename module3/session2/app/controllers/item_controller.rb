@@ -27,13 +27,6 @@ class ItemController < Sinatra::Application
         redirect '/'
     end
 
-
-    get '/items/new' do
-        erb :"components/create", locals: {
-            categories: Category.get_all_categories
-        }
-    end
-
     get '/items/:id' do 
         id = params[:id]
         erb :detail, locals: {
@@ -41,13 +34,6 @@ class ItemController < Sinatra::Application
         }
     end
 
-    get '/items/:id' do
-        id = params[:id]
-        items = Item.get_by_id(id)
-        erb :"components/item_details", locals: {
-            items: items
-        }
-    end
 
     get '/items/:id/edit' do
         id = params[:id] 
