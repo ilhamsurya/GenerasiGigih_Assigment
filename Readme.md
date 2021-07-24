@@ -16,4 +16,4 @@
 
 1. **Session 1** : Learn DB_Connection in Sinatra, Learn basic HTTP Request using database (19/07/2021)
 2. **Session 2** : Learn MVC Concept, Flow & Implementation in Sinatra, Setting up Environment Variable, (21/07/2021)
-3. **Session 3** : Learn Model Relationship, Refactoring Previous Project Into MVC (21/07/2021)
+3. **Session 3** : Learn Model Relationship, Refactoring Previous Project Into MVC (23/07/2021)
