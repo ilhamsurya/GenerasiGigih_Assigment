@@ -19,3 +19,10 @@ Setup Gemfile
 
 Run rack project
     1. rackup -p [PORT]
+
+Setup Unit Test
+    1. Bundle Install / Gem Install rspec
+    2. rspec --version
+    3. rspec --init
+    4. rspec index.rb (run test)
+    5. rspec -f d index.rb(test result)
