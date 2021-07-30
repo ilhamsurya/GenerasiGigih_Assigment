@@ -26,3 +26,6 @@ Setup Unit Test
     3. rspec --init
     4. rspec index.rb (run test)
     5. rspec -f d index.rb(test result)
+
+Setup TDD
+    1. open coverage/index.html 

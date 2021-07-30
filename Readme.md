@@ -21,3 +21,4 @@
 ### Module 4:
 
 1. **Session 1** : Learn Automated Test, Learn F.I.R.S.T Principle, Use Rspec To Implement Unit Test (22/07/2021)
+2. **Session 2** : Learn Test Driven Development, TDD Rules & Cycle, Code Coverage Using SimpleCov (22/07/2021)
