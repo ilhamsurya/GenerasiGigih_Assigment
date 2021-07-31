@@ -24,14 +24,12 @@ class ItemController < Sinatra::Application
         item.create(name,price,category)
 
     end
-
     def self.detail(params)
         id = params['id']
         items = Item.get_one(id)
         renderer = ERB.new(File.read("./app/views/items/detail.erb"))
         renderer.result(binding)
     end
-
     def self.edit(params)
         id = params['id']
         items = Item.get_one(id)
@@ -40,7 +38,6 @@ class ItemController < Sinatra::Application
         renderer.result(binding)
         
     end
-
     def self.update(params)
         id = params['id']
         name = params['name']
@@ -49,11 +46,8 @@ class ItemController < Sinatra::Application
         Item.update(id, name, price, category)
   
     end
-
     def self.delete(params)
         id = params['id']
         Item.delete(id)
- 
     end
-    
 end

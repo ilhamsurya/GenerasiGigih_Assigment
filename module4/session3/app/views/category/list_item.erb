@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+    <div class="menu-box">
+        <div class="box-row">
+        <% categories_item.each do |item|%>
+            <div class="box-column">
+                <div class="menu-card">
+                <img
+                    src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=685&q=80"
+                />
+                <p><%= item.name %>, Rp <%= item.price %></p>
+    
+                </div>
+            </div>
+        <% end %>
+        <div class="box-column"></div>
+        </div>
+    </div>
+
+    </body>
+</html>
+

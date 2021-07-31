@@ -20,5 +20,6 @@
 
 ### Module 4:
 
-1. **Session 1** : Learn Automated Test, Learn F.I.R.S.T Principle, Use Rspec To Implement Unit Test (22/07/2021)
+1. **Session 1** : Learn Automated Test, Learn F.I.R.S.T Principle, Use RSpec To Implement Unit Test (22/07/2021)
 2. **Session 2** : Learn Test Driven Development, TDD Rules & Cycle, Code Coverage Using SimpleCov (24/07/2021)
+3. **Session 3** : Learn Unit Test In Model & Controllers, RSpec Hooks, Stub & Mock in RSpec (26/07/2021)

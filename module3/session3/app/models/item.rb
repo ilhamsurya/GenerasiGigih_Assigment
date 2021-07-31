@@ -49,7 +49,7 @@ class Item
         rawData = client.query("select * from items where price < #{price}")
     end
     ## UPDATE Item
-    def self.update(id, name, price, category)
+    def update(id, name, price, category)
         client= create_db_client
         updateData = client.query("
         UPDATE items 

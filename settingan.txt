@@ -1,3 +1,7 @@
+Shutdown VM:
+1) wsl --list --verbose
+2) wsl -t ubuntu-20.04
+
 Password Akun SQL Admin:
 1) username: Admin
 2) password: password
