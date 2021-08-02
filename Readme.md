@@ -26,4 +26,4 @@
 
 ### Module 5:
 
-1. **Session 1** : Learn Advanced Git, Revert Command Changes (22/07/2021)
+1. **Session 1** : Learn Advanced Git Command, Revert Changes, Git Workflow, Vagrant & Ansible Setup (02/08/2021)
