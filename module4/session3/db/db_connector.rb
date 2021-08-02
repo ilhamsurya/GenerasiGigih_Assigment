@@ -1,13 +1,22 @@
 require 'mysql2'
-require './config/environment'
+
+require_relative '../config/environment'
+
+
 
 def create_db_client
-  client = Mysql2::Client.new(
+
+  Mysql2::Client.new(
+
     host: 'localhost',
+
     username: 'admin',
+
     password: 'password',
-    database: ENV["DB_NAME"]
+
+    database: ENV['DB_NAME']
+
   )
-  client
+
 end
 

@@ -33,3 +33,9 @@ Setup Unit Test
 
 Setup TDD
     1. open coverage/index.html 
+
+Run vagrant
+    1. vagrant box list 
+    2. vagrant init ubuntu/focal64
+    3. vagrant up
+    

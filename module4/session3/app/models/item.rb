@@ -10,7 +10,11 @@ class Item
     @id = id
     @category = category
   end
-
+  # VALIDATION Item
+  def valid?
+    return false if @name.nil? || @price.nil?
+    true
+  end
   ## CREATE New Item
   def create(name, price, category)
     client = create_db_client

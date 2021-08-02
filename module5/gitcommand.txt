@@ -1,0 +1,30 @@
+Session Git Advanced
+
+1) git remote -v : check current remote
+2) git status : melihat semua file yang changes (awalnya ga ada jadi ada)
+3) git diff: hanya melihat hasil modifikasi saja 
+4) git commit -m "title" : mengcommit file yang ada ke remote
+5) git commit --amend : mengedit commit message
+6) git commit --amend -s : menambah signed off
+7) git remote add origin HTTPS/SSH : melakukan konenksi dengan repo
+8) git push origin master : melakukan push sesuai repo yang di set
+
+Undo Related Git Command:
+1) git log : memeriksa log dari commit history
+2) git stash : menghapus history commit  
+3) git stash apply/pop 0: 
+2) git revert [commit_hash] : 
+3) git reset --soft, --hard : Untuk soft tidak menghapus file di local, hard menghapus keseluruhan 
+
+Summary Branch:
+1) git checkout -b [nama_branch]: membuat branch baru 
+2) git fetch : update remote tracking branch
+3) git merge FETCH_HEAD: 
+
+Perbedaan HTTPS dan SSH:
+1) HTTPS: Seperti mengakses website, memerlukan autentikasi usename dan password github
+2) SSH: Menggunakan public key yang terintegrasi dengan machine sehingga tidak perlu autentikasi manual.
+
+Perbedaan Fork dan Clone:
+1) Clone : mengcopy project dari remote ke local
+2) Fork: mengcopy project dari remote ke repo
