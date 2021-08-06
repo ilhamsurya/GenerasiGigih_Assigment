@@ -1,29 +1,45 @@
-Shutdown VM:
-1) wsl --list --verbose
-2) wsl -t ubuntu-20.04
 
+<1> INSTALLING WSL2
+Open WSL Directory List: 
+    1) explorer.exe
+
+Shutdown VM:
+    1) wsl --list --verbose
+    2) wsl -t ubuntu-20.04
+
+<2> INSTALLING MYSQL
+Installing mysql
+    1) sudo apt install mysql-server
+    2) sudo apt-get install libmysqlclient-dev
+ 
+Create New User:
+    1) CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+    2) GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
 Password Akun SQL Admin:
-1) username: Admin
-2) password: password
+    1) username: admin
+    2) password: password
 
 Running My SQL
-1) sudo /etc/init.d/mysql start
-2) sudo mysql
+    1) sudo /etc/init.d/mysql start
+    2) sudo mysql
+
+Export & Import New SQL
+    1) export : mysqldump --single-transaction -u admin -p food_oms_db > food_oms_db.sql --no-tablespaces
+    2) import : mysql -u admin -p food_oms_db< food_oms_db.sql
 
 Login as username
-1) mysql -u admin -p  
-2) pass = password
+    1) mysql -u admin -p  
+    2) pass = password
 
 Check Status SQL
 sudo /etc/init.d/mysql status 
 
+<2> INSTALLING GEMFILE
 Setup Gemfile
-    1. Buat File Gemfile
+    1. Buat File Gemfile, isi dependency
     2. bundle install
 
-Run rack project
-    1. rackup -p [PORT]
-
+<3> INSTALLING UNIT TESTING
 Setup Unit Test
     1. Bundle Install / Gem Install rspec
     2. rspec --version
@@ -34,8 +50,50 @@ Setup Unit Test
 Setup TDD
     1. open coverage/index.html 
 
+<4> CATATAN DEPLOYMENT
 Run vagrant
     1. vagrant box list 
     2. vagrant init ubuntu/focal64
-    3. vagrant up
+    3. vagrant plugin install virtualbox_WSL2 (swl)
+    4. vagrant up
+    5. vagrant ssh
+    6. vagrant ssh-config
+    7. vagrant plugin install vagrant-vbguest (shell)
     
+Check server connection 
+    1) server_name : gbe01077-server 34.81.135.86
+    2) sudo chmod 600 ~/.ssh/id_ed25519
+    3) add ssh private key: ssh-add ~/.ssh/id_ed25519
+    3) check connection : ssh -i ~/.ssh/id_ed25519 gbe01077@34.81.135.86
+
+Deployment Script
+    1) dependency
+    2) install app
+    3) config app
+    4) run
+change static ip
+    1. ubah :  config.vm.network 'private_network', ip: '192.168.20.21' di vagrantfile
+    2. vagrant reload
+    3. cek ip : ip a
+
+Connect ip to vagrant  
+    1. ssh vagrant@127.0.0.1 -p 2222 -i C:/Users/ilham/.vagrant.d/insecure_private_key
+    2. custom ip: ssh vagrant@192.168.20.21 -p 22 -i  C:/Users/ilham/Desktop/Habitat/generasigigih/Intermediate/food_app/.vagrant/machines/default/virtualbox/private_key
+    
+Check server connection 
+    1) server_name : gbe01077-server 34.81.135.86
+    2) sudo chmod 600 ~/.ssh/id_ed25519
+    3) add ssh private key: ssh-add ~/.ssh/id_ed25519
+    3) check connection : 
+
+TAR Command
+    1) Create & exclude new tar File 
+    tar --exclude='./food_app/.bundle/' --exclude='./food_app/spec/model/coverage/' --exclude='./food_app/spec/controller/coverage/' --exclude='./food_app/.vagrant/' -cvzf build.tgz ./food_app
+    2) Melihat daftar isi file tar
+    tar -tvf build.tgz
+    3) 
+
+Upload app to server:
+    1) scp -i C:/Users/ilham/Desktop/Habitat/generasigigih/Intermediate/food_app/.vagrant/machines/default/virtualbox/private_key C:/Users/ilham/Desktop/Habitat/generasigigih/Intermediate/build.tgz vagrant@192.168.20.21:/home/vagrant/app
+    2) ekstak file build :  tar -xvf build.tgz
+    3) remove file build:   rm build.tgz
